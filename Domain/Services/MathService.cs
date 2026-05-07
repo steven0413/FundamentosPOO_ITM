@@ -24,6 +24,14 @@
             return b * 3;
         }
 
+        public double RootOrSquare(int num)
+        {
+            if (num > 0)
+                return Math.Sqrt(num); //Math.Sqrt retorna números decimales.
+
+            return num * num;
+        }
+
     }
 
 }

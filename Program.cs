@@ -59,6 +59,20 @@ app.MapGet("/double-or-triple/{a}/{b}", (int a, int b) =>
     });
 });
 
+app.MapGet("/root-or-square/{num}", (int num) =>
+{
+    var service = new MathService();
+
+    var resultado = service.RootOrSquare(num);
+
+    return Results.Ok(new
+    {
+        input = num,
+        resultado = resultado
+    });
+});
+
+
 app.Run();
 
 
