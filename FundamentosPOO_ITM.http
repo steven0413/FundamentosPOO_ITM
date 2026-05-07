@@ -1,0 +1,6 @@
+@FundamentosPOO_ITM_HostAddress = http://localhost:5008
+
+GET {{FundamentosPOO_ITM_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
