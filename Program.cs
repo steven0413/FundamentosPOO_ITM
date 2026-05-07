@@ -45,6 +45,20 @@ app.MapGet("/positive-power/{num}", (int num) =>
     return Results.Ok(new { input = num, resultado = resultado });
 });
 
+app.MapGet("/double-or-triple/{a}/{b}", (int a, int b) =>
+{
+    var service = new MathService();
+
+    var resultado = service.DoubleOrTriple(a, b);
+
+    return Results.Ok(new
+    {
+        inputA = a,
+        inputB = b,
+        resultado = resultado
+    });
+});
+
 app.Run();
 
 
