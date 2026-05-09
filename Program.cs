@@ -85,6 +85,19 @@ app.MapGet("/circle-perimeter/{radius}", (double radius) =>
     });
 });
 
+app.MapGet("/midweek-day/{day}", (int day) =>
+{
+    var service = new MathService();
+
+    var resultado = service.MidweekDay(day);
+
+    return Results.Ok(new
+    {
+        input = day,
+        resultado = resultado
+    });
+});
+
 app.Run();
 
 
