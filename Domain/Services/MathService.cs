@@ -39,6 +39,30 @@
             return Math.Round(perimeter, 2); // dos decimales
         }
 
+        public string MidweekDay(int day) // Recibe un número entero y retorna un texto (string)
+        {
+            switch (day)
+            {
+                case 1:
+                    return "Lunes";
+
+                case 2:
+                    return "Martes";
+
+                case 3:
+                    return "Miércoles";
+
+                case 4:
+                    return "Jueves";
+
+                case 5:
+                    return "Viernes";
+
+                default:
+                    return "Número fuera del rango laboral";
+            }
+        }
+
     }
 
 }
