@@ -24,12 +24,19 @@
             return b * 3;
         }
 
-        public double RootOrSquare(int num)
+        public double RootOrSquare(int num) //double números decimales
         {
             if (num > 0)
-                return Math.Sqrt(num); //Math.Sqrt retorna números decimales.
-
+                return Math.Sqrt(num); //Math.Sqrt raíz cuadrada retorna números decimales.
+           
             return num * num;
+        }
+
+        public double CirclePerimeter(double radius)
+        {
+            double perimeter = 2 * Math.PI * radius;
+
+            return Math.Round(perimeter, 2); // dos decimales
         }
 
     }

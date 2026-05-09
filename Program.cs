@@ -72,6 +72,18 @@ app.MapGet("/root-or-square/{num}", (int num) =>
     });
 });
 
+app.MapGet("/circle-perimeter/{radius}", (double radius) =>
+{
+    var service = new MathService();
+
+    var resultado = service.CirclePerimeter(radius);
+
+    return Results.Ok(new
+    {
+        radius = radius,
+        resultado = resultado
+    });
+});
 
 app.Run();
 
