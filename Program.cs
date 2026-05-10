@@ -139,18 +139,31 @@ app.MapGet("/sum-of-evens", () =>
 
 app.MapGet("/fraction-difference/{a}/{b}/{c}/{d}",
     (int a, int b, int c, int d) =>
+{
+    var service = new MathService();
+
+    var resultado = service.FractionDifference(a, b, c, d);
+
+    return Results.Ok(new
     {
-        var service = new MathService();
-
-        var resultado = service.FractionDifference(a, b, c, d);
-
-        return Results.Ok(new
-        {
-            fraction1 = $"{a}/{b}",
-            fraction2 = $"{c}/{d}",
-            resultado = resultado
-        });
+        fraction1 = $"{a}/{b}",
+        fraction2 = $"{c}/{d}",
+        resultado = resultado
     });
+});
+
+app.MapGet("/string-length/{word}", (string word) =>
+{
+    var service = new MathService();
+
+    var resultado = service.StringLength(word);
+
+    return Results.Ok(new
+    {
+        palabra = word,
+        longitud = resultado
+    });
+});
 
 app.Run();
 
