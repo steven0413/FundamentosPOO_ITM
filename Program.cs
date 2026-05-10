@@ -219,6 +219,19 @@ app.MapGet("/factorial-finder/{number}", (int number) =>
     });
 });
 
+app.MapGet("/in-range-validator/{number}", (int number) =>
+{
+    var service = new MathService();
+
+    var resultado = service.InRangeValidator(number);
+
+    return Results.Ok(new
+    {
+        numero = number,
+        resultado = resultado
+    });
+});
+
 
 app.Run();
 
