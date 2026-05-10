@@ -98,6 +98,33 @@ app.MapGet("/midweek-day/{day}", (int day) =>
     });
 });
 
+app.MapGet("/tax-calculator/{salary}", (double salary) =>
+{
+    var service = new MathService();
+
+    var resultado = service.TaxCalculator(salary);
+
+    return Results.Ok(new
+    {
+        salary = salary,
+        resultado = resultado
+    });
+});
+
+app.MapGet("/remainder-finder/{a}/{b}", (int a, int b) =>
+{
+    var service = new MathService();
+
+    var resultado = service.RemainderFinder(a, b);
+
+    return Results.Ok(new
+    {
+        inputA = a,
+        inputB = b,
+        resultado = resultado
+    });
+});
+
 app.Run();
 
 

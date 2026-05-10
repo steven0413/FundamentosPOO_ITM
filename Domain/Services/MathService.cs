@@ -63,6 +63,20 @@
             }
         }
 
+        public string TaxCalculator(double salary)
+        {
+            if (salary > 12000) // condicion 
+            {
+                double excess = salary - 12000;
+
+                double tax = excess * 0.15;
+
+                return Math.Round(tax, 2).ToString();
+            }
+
+            return "No debe impuestos";
+        }
+
     }
 
 }
