@@ -121,6 +121,19 @@
             return average;
         }
 
+        public int SmallestOfFive(int a, int b, int c, int d, int e)
+        {
+            int smallest = Math.Min(a, b);
+
+            smallest = Math.Min(smallest, c);
+
+            smallest = Math.Min(smallest, d);
+
+            smallest = Math.Min(smallest, e);
+
+            return smallest;
+        }
+
     }
 
 }

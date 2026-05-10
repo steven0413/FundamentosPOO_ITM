@@ -179,6 +179,21 @@ app.MapGet("/average-of-four/{a}/{b}/{c}/{d}",
         });
     });
 
+app.MapGet("/smallest-of-five/{a}/{b}/{c}/{d}/{e}",
+    (int a, int b, int c, int d, int e) =>
+    {
+        var service = new MathService();
+
+        var resultado = service.SmallestOfFive(a, b, c, d, e);
+
+        return Results.Ok(new
+        {
+            numeros = new[] { a, b, c, d, e },
+            menor = resultado
+        });
+    });
+
+
 app.Run();
 
 
