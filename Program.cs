@@ -206,6 +206,19 @@ app.MapGet("/vowel-counter/{word}", (string word) =>
     });
 });
 
+app.MapGet("/factorial-finder/{number}", (int number) =>
+{
+    var service = new MathService();
+
+    var resultado = service.FactorialFinder(number);
+
+    return Results.Ok(new
+    {
+        numero = number,
+        factorial = resultado
+    });
+});
+
 
 app.Run();
 
