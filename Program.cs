@@ -137,6 +137,21 @@ app.MapGet("/sum-of-evens", () =>
     });
 });
 
+app.MapGet("/fraction-difference/{a}/{b}/{c}/{d}",
+    (int a, int b, int c, int d) =>
+    {
+        var service = new MathService();
+
+        var resultado = service.FractionDifference(a, b, c, d);
+
+        return Results.Ok(new
+        {
+            fraction1 = $"{a}/{b}",
+            fraction2 = $"{c}/{d}",
+            resultado = resultado
+        });
+    });
+
 app.Run();
 
 
