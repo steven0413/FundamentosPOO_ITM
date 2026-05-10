@@ -84,17 +84,41 @@
 
         public int SumOfEvens()
         {
-            int sum = 0;
+            int sum = 0; // acumulador
 
             for (int i = 1; i <= 50; i++) // Bucle for
             {
                 if (i % 2 == 0) // validacion par
                 {
-                    sum += i;
+                    sum += i; // acumulacion
                 }
             }
 
             return sum;
+        }
+
+        public string FractionDifference(int a, int b, int c, int d)
+        {
+            int numerator = (a * d) - (c * b);
+
+            int denominator = b * d;
+
+            if (numerator == 0)
+                return "0";
+
+            return $"{numerator}/{denominator}";
+        }
+
+        public int StringLength(string word)
+        {
+            return word.Length;
+        }
+
+        public double AverageOfFour(double a, double b, double c, double d)
+        {
+            double average = (a + b + c + d) / 4;
+
+            return average;
         }
 
     }

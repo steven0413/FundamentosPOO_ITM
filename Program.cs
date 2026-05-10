@@ -165,6 +165,20 @@ app.MapGet("/string-length/{word}", (string word) =>
     });
 });
 
+app.MapGet("/average-of-four/{a}/{b}/{c}/{d}",
+    (double a, double b, double c, double d) =>
+    {
+        var service = new MathService();
+
+        var resultado = service.AverageOfFour(a, b, c, d);
+
+        return Results.Ok(new
+        {
+            numeros = new[] { a, b, c, d },
+            promedio = resultado
+        });
+    });
+
 app.Run();
 
 
