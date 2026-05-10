@@ -125,6 +125,18 @@ app.MapGet("/remainder-finder/{a}/{b}", (int a, int b) =>
     });
 });
 
+app.MapGet("/sum-of-evens", () =>
+{
+    var service = new MathService();
+
+    var resultado = service.SumOfEvens();
+
+    return Results.Ok(new
+    {
+        resultado = resultado
+    });
+});
+
 app.Run();
 
 

@@ -77,6 +77,26 @@
             return "No debe impuestos";
         }
 
+        public int RemainderFinder(int a, int b) 
+        {
+            return a % b;
+        }
+
+        public int SumOfEvens()
+        {
+            int sum = 0;
+
+            for (int i = 1; i <= 50; i++) // Bucle for
+            {
+                if (i % 2 == 0) // validacion par
+                {
+                    sum += i;
+                }
+            }
+
+            return sum;
+        }
+
     }
 
 }
