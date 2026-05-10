@@ -193,6 +193,19 @@ app.MapGet("/smallest-of-five/{a}/{b}/{c}/{d}/{e}",
         });
     });
 
+app.MapGet("/vowel-counter/{word}", (string word) =>
+{
+    var service = new MathService();
+
+    var resultado = service.VowelCounter(word);
+
+    return Results.Ok(new
+    {
+        palabra = word,
+        vocales = resultado
+    });
+});
+
 
 app.Run();
 
